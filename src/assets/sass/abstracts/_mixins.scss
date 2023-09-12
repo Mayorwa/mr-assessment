@@ -1,0 +1,107 @@
+$breakpoints: (
+  'small-mobile': 450px,
+  'mobile': 650px,
+  'lg-mobile': 768px,
+  'tablet': 900px,
+  'desktop-l': 1024px,
+  'desktop-bp': 1179px,
+  'desktop-xl': 1280px,
+  'desktop-xxl': 1480px,
+) !default;
+
+@mixin font-1 {
+  font-family: 'Inter', sans-serif;
+}
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: #{inspect(map-get($breakpoints, $breakpoint))}) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+
+@mixin respond-from($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: #{inspect(map-get($breakpoints, $breakpoint))}) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin h1{
+  font-size: 4rem;
+  line-height: 1.23em;
+  font-weight: 700;
+}
+
+@mixin h2{
+  font-size: 3rem;
+  line-height: 1.23em;
+  font-weight: 700;
+}
+
+@mixin h3{
+  font-size: 2.25rem;
+  line-height: 1.23em;
+  font-weight: 700;
+}
+
+@mixin h4{
+  font-size: 1.875rem;
+  line-height: 1.23em;
+  font-weight: 600;
+}
+
+@mixin h5{
+  font-size: 1.5rem;
+  line-height: 1.23em;
+  font-weight: 600;
+}
+
+@mixin h6{
+  font-size: 1.25rem;
+  line-height: 1.8em;
+  font-weight: 600;
+}
+
+@mixin text-sm{
+  font-size: 1.125rem;
+  line-height: 1.8em;
+}
+
+@mixin text-xs{
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8em;
+}
+
+@mixin text-xxs{
+  font-weight: 400;
+  font-size: 0.94rem;
+  line-height: 1.8em;
+}
+
+@mixin text-3xs{
+  font-weight: 400;
+  font-size: 0.84rem;
+  line-height: 1.8em;
+}

@@ -1,0 +1,70 @@
+h1 {
+    @include h1;
+    @include respond-to('mobile') {
+        @include h3;
+    }
+}
+
+h2{
+    @include h2;
+    @include respond-to('mobile') {
+        @include h4;
+    }
+}
+
+h3 {
+    @include h3;
+    @include respond-to('mobile') {
+        @include h5;
+    }
+}
+
+h4{
+    @include h4;
+    @include respond-to('mobile') {
+        @include h6;
+    }
+}
+
+h5 {
+    @include h5;
+    @include respond-to('mobile') {
+        @include text-sm;
+    }
+}
+
+h6 {
+    @include h6;
+    @include respond-to('mobile') {
+        @include text-xs;
+    }
+}
+
+
+p {
+    @include text-sm;
+    @include respond-to('mobile') {
+        @include text-xs;
+    }
+}
+
+.font-sm{
+    @include text-sm;
+    @include respond-to('mobile') {
+        @include text-xs;
+    }
+}
+
+.font-xs{
+    @include text-xs;
+    @include respond-to('mobile') {
+        @include text-xxs;
+    }
+}
+
+.font-xxs{
+    @include text-xxs;
+    @include respond-to('mobile') {
+        @include text-3xs;
+    }
+}
